@@ -1,0 +1,27 @@
+.searchForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchForm .categories {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.searchForm button {
+  width: 30%;
+}
+
+.song {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+.song .overlay-dark {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, transparent 64%, rgba(0, 0, 0, 0.95));
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}/*# sourceMappingURL=app.component.css.map */
