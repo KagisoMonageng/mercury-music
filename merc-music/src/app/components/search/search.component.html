@@ -1,0 +1,58 @@
+<form action="" [formGroup]="searchForm" class="searchForm" (ngSubmit)="search()">
+    <div class="flex gap-2"> <input type="text" formControlName="query"
+            class="input w-full  flex-1 input-bordered border-black focus:outline-none rounded-none"
+            placeholder="Search a Song, Artist, Album">
+        <button type="submit" class="btn w-10 h-full p-0 rounded-none btn-ghost bg-black text-white">s</button>
+    </div>
+    <div class="categories scroll-smooth">
+        <div class="category">
+            <label>
+                <input type="radio" value="multi" formControlName="category">
+                <span>All</span>
+            </label>
+
+        </div>
+        <div class="category">
+            <label>
+                <input type="radio" value="artist" formControlName="category">
+                <span>All</span>
+            </label>
+
+        </div>
+        <div class="category">
+            <label>
+                <input type="radio" value="track" formControlName="category">
+                <span>Songs</span>
+            </label>
+
+        </div>
+        <div class="category">
+            <label>
+                <input type="radio" value="album" formControlName="category">
+                <span>Albums</span>
+            </label>
+
+        </div>
+    </div>
+
+
+</form>
+<div class="song-results carousel w-full p-4 space-x-2" *ngIf="searchRes">
+    <div class="song carousel-item relative w-48 lg:w-56 md:w-80 lg:w-96 aspect-square border border-black "
+        *ngFor="let res of searchRes.tracks.items" (click) = "viewSong(res.data)"
+        style="background-image: url({{res.data.albumOfTrack.coverArt.sources[0].url}});">
+        <div class="overlay-dark absolute flex place-items-end">
+            <p class="text-lg text-white pl-4 pb-3">{{res.data.name}}</p>
+        </div>
+
+        <button class="btn btn-primary absolute right-3 bottom-3 btn-sm rounded-full"
+            (click)="playPreview(res.data.id)">p</button>
+    </div>
+</div>
+<audio *ngIf="song" [src]=song.preview_url class="absolute" autoplay preload></audio>
+
+<div class="albums-results flex">
+    <!-- <div class="result" *ngFor="let res of searchRes.albums.items">
+        <p>{{res.data.name}}</p>
+    </div> -->
+</div>

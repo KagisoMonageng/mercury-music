@@ -1,0 +1,46 @@
+.searchForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.searchForm .categories{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    gap: .5rem;
+}
+.searchForm  button{
+    width: 30%;
+} 
+.song{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+    & .overlay-dark{
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to bottom, transparent 64%, rgb(0 0 0 / 95%));
+    }
+}
+
+.category {
+    & label{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        & span{
+            padding: 5px 15px;
+            border-radius: 0px;
+            transition: all .3s ease-in-out;
+        }
+        & input{
+            visibility: hidden;
+            &:checked + span{
+                background-color: rgb(0, 0, 0);
+                color: #fff;
+            }
+        }
+    }
+}

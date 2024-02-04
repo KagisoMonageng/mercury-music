@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yzK/jne1VfQkdPo2djfmmV2RYd9dyLGQrBxx7onT2pc=",
+  "Source": "music-backend",
+  "BasePath": "_content/music-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
